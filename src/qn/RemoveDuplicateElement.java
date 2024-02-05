@@ -18,7 +18,11 @@ public class RemoveDuplicateElement {
     }
     static int[] countUnique(int[] nums){
         int count = 0;
-        int[] freq = new int[1000];
+        int max = 0;
+        for (int i = 0; i < nums.length; i++){
+            max = Math.max(max, nums[i]);
+        }
+        int[] freq = new int[max + 1];
         Arrays.fill(freq, 0);
         for (int i = 0; i < nums.length; i++){
             freq[nums[i]]++;
@@ -28,17 +32,11 @@ public class RemoveDuplicateElement {
         }
         int[] arr = new int[count];
         int index = 0;
-        for (int i = 1; i < nums.length; i++){
-            if(nums[i] == nums[i-1]) {
-                arr[index] = nums[i];
+        for (int i = 0; i < freq.length; i++){
+            if(freq[i] != 0) {
+                arr[index] = i;
                 index++;
-                continue;
             }
-//            arr[index] = nums[i];
-//            if(nums[i] != nums[i-1]) {
-//                arr[index] = nums[i];
-//                index++;
-//            }
         }
         return arr;
     }

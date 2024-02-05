@@ -17,4 +17,13 @@ public class PrimeOrNot {
         }
         return true;
     }
+
+    static boolean isPrime2(int n){
+        int i = n / 2;
+        while (i >= 2) {
+            if (n % i == 0) return false;
+            i--;
+        }
+        return true;
+    }
 }

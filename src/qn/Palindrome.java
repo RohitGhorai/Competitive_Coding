@@ -19,8 +19,7 @@ public class Palindrome {
     //Using reverse method
     static boolean isPalindrome2(String st){
         StringBuilder sb = new StringBuilder(st);
-        StringBuilder sb2 = sb.reverse();
-        String st2 = sb2.toString();
+        String st2 = sb.reverse().toString();
         return st.equals(st2);
     }
     //Using two pointers
@@ -53,4 +52,15 @@ public class Palindrome {
         }
         return res;
     }
+
+//    static String longestPalindrome(String str){
+//        String pal = "";
+//        for (int i = 0; i < str.length(); i++){
+//            if (isPalindrome(str, i, str.length() - 1 - i)) {
+//                pal = str.substring(i, str.length() - i);
+//                return pal;
+//            }
+//        }
+//        return pal;
+//    }
 }
