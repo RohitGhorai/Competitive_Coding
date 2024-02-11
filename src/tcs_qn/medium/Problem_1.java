@@ -25,10 +25,21 @@ public class Problem_1 {
         }
     }
 
+    /*
+    static List<Integer> rotate(int[] arr, int k){
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < arr.length*2; i++){
+            if (list.size() == arr.length) return list;
+            list.add(arr[(arr.length - k + i)%arr.length]);
+        }
+        return list;
+    }
+     */
+
     static int[] method_2(int[] arr, int d){
         int[] ans = new int[arr.length];
         int j = 0;
-        for (int i = d; i < arr.length * 2; i++){
+        for (int i = arr.length - d; i < arr.length * 2; i++){
             ans[j] = arr[i % arr.length];
             j++;
             if (j == ans.length) break;

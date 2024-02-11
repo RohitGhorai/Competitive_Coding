@@ -17,6 +17,7 @@ public class ValidParentheses {
                 if (ch == ')' && s.peek() == '(') s.pop();
                 else if (ch == '}' && s.peek() == '{') s.pop();
                 else if (ch == ']' && s.peek() == '[') s.pop();
+                else return false;
             }
         }
         return s.isEmpty();

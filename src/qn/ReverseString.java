@@ -11,6 +11,11 @@ public class ReverseString {
         System.out.println(res);
     }
 
+    // reverse single string
+    static String reverse(String str){
+        if (str.length() == 0) return str;
+        else return reverse(str.substring(1)) + str.charAt(0);
+    }
     static String method_4(String str){
         StringBuilder result = new StringBuilder();
         String[] st = str.split(" ");
