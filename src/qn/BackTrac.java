@@ -228,7 +228,7 @@ public class BackTrac {
         return allBoards;
     }
 
-    static void permutation(String str, String perm, int index){
+    static void permutation(String str, String perm){
         if(str.length() == 0) {
             System.out.println(perm);
             return;
@@ -236,7 +236,7 @@ public class BackTrac {
         for(int i = 0; i < str.length(); i++){
             char ch = str.charAt(i);
             String st = str.substring(0, i) + str.substring(i+1);
-            permutation(st, perm + ch, index + 1);
+            permutation(st, perm + ch);
         }
     }
 }
